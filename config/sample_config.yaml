@@ -1,0 +1,33 @@
+database:
+  type: "postgresql"              # The type of the database (e.g., postgresql, mysql, sqlite)
+  connection:                     # Connection settings for the database
+    host: "localhost"             # Hostname of the database server
+    port: 5432                     # Port number for the database connection
+    user: "user"                   # Username for database authentication
+    password: "password"           # Password for database authentication
+    database: "test_db"            # Name of the database to connect to
+
+data:
+  users:                          # Configuration for generating user data
+    count: 100                    # Number of users to generate
+    fields:                       # Fields to be generated for each user
+      name: 
+        type: "string"            # Data type of the field (string)
+        pattern: "[A-Z][a-z]*"    # Pattern for the name (capitalize first letter)
+      email:
+        type: "email"             # Data type for email (valid email format)
+      age:
+        type: "integer"            # Data type for age (integer)
+        min: 18                    # Minimum value for age
+        max: 65                    # Maximum value for age
+
+  products:                       # Configuration for generating product data
+    count: 50                     # Number of products to generate
+    fields:
+      name: 
+        type: "string"            # Data type of the field (string)
+        pattern: "[A-Z][a-z]* Product"  # Pattern for the product name
+      price:
+        type: "float"             # Data type for price (floating-point number)
+        min: 1.0                   # Minimum value for price
+        max: 100.0                 # Maximum value for price

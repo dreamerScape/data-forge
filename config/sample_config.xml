@@ -1,0 +1,44 @@
+<configuration>
+  <database>
+    <type>sqlite</type>            <!-- The type of the database (e.g., sqlite, mysql, postgresql) -->
+    <connection>
+      <host>localhost</host>       <!-- Hostname of the database server -->
+      <port>5432</port>            <!-- Port number for the database connection -->
+      <user>user</user>            <!-- Username for database authentication -->
+      <password>password</password> <!-- Password for database authentication -->
+      <database>test_db</database>  <!-- Name of the database to connect to -->
+    </connection>
+  </database>
+  <data>
+    <users count="100">            <!-- Configuration for generating user data -->
+      <field>
+        <name>name</name>          <!-- Field name for the user -->
+        <type>string</type>        <!-- Data type of the field (string) -->
+        <pattern>[A-Z][a-z]*</pattern> <!-- Pattern for the name (capitalize first letter) -->
+      </field>
+      <field>
+        <name>email</name>         <!-- Field name for email -->
+        <type>email</type>         <!-- Data type for email (valid email format) -->
+      </field>
+      <field>
+        <name>age</name>           <!-- Field name for age -->
+        <type>integer</type>        <!-- Data type for age (integer) -->
+        <min>18</min>              <!-- Minimum value for age -->
+        <max>65</max>              <!-- Maximum value for age -->
+      </field>
+    </users>
+    <products count="50">          <!-- Configuration for generating product data -->
+      <field>
+        <name>name</name>          <!-- Field name for the product -->
+        <type>string</type>        <!-- Data type of the field (string) -->
+        <pattern>[A-Z][a-z]* Product</pattern> <!-- Pattern for the product name -->
+      </field>
+      <field>
+        <name>price</name>         <!-- Field name for price -->
+        <type>float</type>         <!-- Data type for price (floating-point number) -->
+        <min>1.0</min>             <!-- Minimum value for price -->
+        <max>100.0</max>           <!-- Maximum value for price -->
+      </field>
+    </products>
+  </data>
+</configuration>

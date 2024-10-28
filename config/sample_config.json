@@ -1,0 +1,46 @@
+{
+    "database": {
+      "type": "mysql",              
+      "connection": {
+        "host": "localhost",        
+        "port": 3306,                
+        "user": "user",              
+        "password": "password",      
+        "database": "test_db"        
+      }
+    },
+    "data": {
+      "users": {
+        "count": 100,               
+        "fields": {
+          "name": {
+            "type": "string",        
+            "pattern": "[A-Z][a-z]*" 
+          },
+          "email": {
+            "type": "email"          
+          },
+          "age": {
+            "type": "integer",        
+            "min": 18,                
+            "max": 65                 
+          }
+        }
+      },
+      "products": {
+        "count": 50,                 
+        "fields": {
+          "name": {
+            "type": "string",        
+            "pattern": "[A-Z][a-z]* Product" 
+          },
+          "price": {
+            "type": "float",         
+            "min": 1.0,              
+            "max": 100.0             
+          }
+        }
+      }
+    }
+  }
+  
